@@ -1,0 +1,39 @@
+.heroHolder {
+    background: rgb(155, 9, 227);
+    background: radial-gradient(circle, rgba(155, 9, 227, 1) 0%, rgba(90, 3, 133, 1) 55%);
+    display: flex;
+    padding: 100px 0px;
+    align-items: center;
+    justify-content: center;
+    font-family: "choco";
+    gap: 20px;
+
+    .heroImg {
+        height: 400px;
+        width: 400px;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        animation: spin 7s linear infinite;
+    }
+}
+
+// body{
+//     background-color: #9609dc;
+//     color: white;
+//     background-image: url("../../assets/images/purplePattern.png");
+// }
+
+.secNcaro{
+    background-color: #9609dc;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}

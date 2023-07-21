@@ -1,0 +1,16 @@
+.heroHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .productHero{
+        height: 500px;
+        width: 400px;
+    }
+}
+
+.myItems{
+    img{
+        height: 500px;
+        width: 400px;
+    }
+}

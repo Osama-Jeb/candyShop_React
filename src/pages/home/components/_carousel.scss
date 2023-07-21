@@ -1,0 +1,20 @@
+.carousel{
+    .carousel-inner{
+        width: 550px;
+        height: 450px;
+        .carousel-item{
+            .imgHolder{
+                img{
+                    box-shadow: 0px 0px 20px #5a0385;
+                    height: 400px;
+                    width: 50%;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    span{
+        background-color: #5a0385;
+        border-radius: 50%;
+    }
+}

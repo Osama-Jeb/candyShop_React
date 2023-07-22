@@ -1,0 +1,48 @@
+.main-content {
+    position: relative;
+    width: 100%;
+    font-family: monospace;
+
+    .sidebar {
+        position: fixed;
+        top: 10%;
+        right: -450px;
+
+
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 450px;
+        height: fit-content;
+        padding-bottom: 10px;
+        background-color: #f2f2f2;
+        transition: right 0.3s ease;
+        z-index: 999;
+
+        .test {
+            height: 500px;
+            overflow-y: auto;
+            scroll-behavior: auto;
+
+            .basketItem {
+                img {
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+        }
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+
+    .sidebar-toggle {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+    }
+}

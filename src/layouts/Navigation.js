@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import "./_navigation.scss"
+import { Sidebar } from "./sidebar/Sidebar"
 
 export const Navigation = () => {
     let myPages = ["drinks", "chips", "bars", "candy"]
@@ -14,9 +15,12 @@ export const Navigation = () => {
                         </>
                     )
                 }
+                <div>
                 <button type="button" className={`btn btn-purple text-light`} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        SignIn/Up
-                    </button>
+                    SignIn/Up
+                </button>
+                <Sidebar />
+                </div>
             </div>
         </>
     )

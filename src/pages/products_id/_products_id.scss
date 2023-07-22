@@ -1,11 +1,25 @@
-.heroHolder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.topHolder{
+    background-color: #5a0385;
+    width: 100%;
+    padding-inline: 20px;
 
-    .productHero {
-        height: 500px;
-        width: 400px;
+    h1{
+        text-transform: uppercase;
+        text-align: center;
+        font-family: "choco";
+        color: #d786ff;
+        
+    }
+
+    .heroHolder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .productHero {
+            height: 500px;
+            width: 400px;
+        }
     }
 }
 
@@ -18,7 +32,7 @@
 
     .item {
         color: white;
-        font-family: "choco";
+        font-family: "pacifico";
         background: rgb(150,9,220);
         background: radial-gradient(circle, rgba(150,9,220,1) 0%, rgba(115,6,169,1) 55%); 
         box-shadow: 0px 0px 10px #8000c083;
@@ -55,7 +69,7 @@
             color: #111111;
         }
         button:active{
-            transform: scale(2);
+            transform: scale(1.1);
         }
 
     }

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./_sidebar.scss";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { Bakset } from "../../App";
 
@@ -47,12 +47,14 @@ export const Sidebar = () => {
                     <FontAwesomeIcon icon={faShoppingCart} />
                 </button>
                 <div className="sidebar">
-                    <button onClick={clearBasket}>CLEAR</button>
+                    <button className="btn fw-bolder fs-5" onClick={clearBasket}>
+                        Empty Your List : <FontAwesomeIcon className="text-danger" icon={faTrash} />
+                    </button>
                     <div className="sidebarScroll">
                         {
                             basketInfo.length === 0 ?
                                 <>
-                                    <h1>SHOP SHOP SHOP </h1>
+                                    <h1 className="shop choco text-center">SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP</h1>
                                 </>
                                 :
                                 <>
@@ -62,15 +64,14 @@ export const Sidebar = () => {
                                                 <>
                                                     <div className="basketItem d-flex align-items-center justify-content-around m-1">
                                                         <img src={element.src} alt="" />
-
                                                         <div className="d-flex align-items-center flex-column">
-                                                            <h4>{element.name}</h4>
-                                                            <div className="d-flex w-100 justify-content-around align-items-center">
-                                                                <button onClick={() => {
+                                                            <h4 className="text-dark fw-bold">{element.name}</h4>
+                                                            <div className="d-flex w-100  gap-1 align-items-center">
+                                                                <button className="btn btn-purple rounded-pill text-light" onClick={() => {
                                                                     SidebarItem(element, "remove");
                                                                 }}>-</button>
-                                                                <h5>{10 - element.stock}</h5>
-                                                                <button onClick={() => {
+                                                                <h2 className="text-dark fw-bold">{10 - element.stock}</h2>
+                                                                <button className="btn btn-purple rounded-pill text-light" onClick={() => {
                                                                     SidebarItem(element, "add");
                                                                 }}>+</button>
                                                             </div>
@@ -84,7 +85,7 @@ export const Sidebar = () => {
                         }
                     </div>
                     <div>
-                        <h1>CHECKOUT {allValue.totalPrice}</h1>
+                        <h1 className="choco">Total: {allValue.totalPrice}$</h1>
                     </div>
                 </div>
             </div>

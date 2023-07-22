@@ -20,8 +20,12 @@ export const Product_id = () => {
                             {
                                 element.name === id ?
                                     <>
-                                        <div className="heroHolder">
-                                            <Carousel>{allInfo[index].items}</Carousel>
+                                        <div className="topHolder d-flex align-items-center justify-content-center gap-2 ">
+                                            <h1>Enjour our {id}</h1>
+                                            <div className="heroHolder">
+                                                <Carousel>{allInfo[index].items}</Carousel>
+                                            </div>
+                                            <h1>Browse our Selection</h1>
                                         </div>
                                         <div className="myItems container">
                                             {
@@ -31,15 +35,15 @@ export const Product_id = () => {
                                                             <NavLink to={`/products/${id}/${el.name}`}>
                                                                 <img src={el.src} alt="" />
                                                             </NavLink>
-                                                            <h2>{el.price}$</h2>
+                                                            <h2 className="mt-1">{el.name} : {el.price}$</h2>
                                                             <h2>Items Left: {el.stock}</h2>
                                                             <div className="d-flex align-items-center justify-content-around w-100">
                                                                 <button className="w-50" onClick={() => {
                                                                     allValue.removeItem(index, i)
-                                                                }}>-</button>
+                                                                }}>-1</button>
                                                                 <button className="w-50" onClick={() =>
                                                                     allValue.addItem(index, i)
-                                                                }>+</button>
+                                                                }>+1</button>
                                                             </div>
                                                         </div>
                                                     </>

@@ -3,6 +3,7 @@ import "./_products_id.scss";
 import { useContext } from "react";
 import { Bakset } from "../../App";
 import { Carousel } from "../home/components/Carousel";
+import { motion } from "framer-motion";
 
 export const Product_id = () => {
     const { id } = useParams();
@@ -13,7 +14,11 @@ export const Product_id = () => {
 
     return (
         <>
-            <div>
+            <motion.div
+                initial={{ x: "100vw", opacity:0}}
+                animate={{ x: 0, opacity: 1}}
+                transition={{ type: "tween", delay: 0.2, stiffness: 200, duration:0.4}}
+            >
                 {
                     allInfo.map((element, index) =>
                         <>
@@ -27,7 +32,11 @@ export const Product_id = () => {
                                             </div>
                                             <h1>Browse our Selection</h1>
                                         </div>
-                                        <div className="myItems container">
+                                        <motion.div className="myItems container"
+                                            initial={{ opacity: 0 }}
+                                            whileInView={{ opacity: 1 }}
+                                            transition={{ delay: 0.2, duration: 0.5 }}
+                                        >
                                             {
                                                 allInfo[index].items.map((el, i) =>
                                                     <>
@@ -49,7 +58,7 @@ export const Product_id = () => {
                                                     </>
                                                 )
                                             }
-                                        </div>
+                                        </motion.div>
                                     </>
                                     :
                                     <></>
@@ -57,7 +66,7 @@ export const Product_id = () => {
                         </>
                     )
                 }
-            </div>
+            </motion.div>
         </>
     )
 }

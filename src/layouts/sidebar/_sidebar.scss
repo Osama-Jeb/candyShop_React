@@ -8,8 +8,6 @@
         top: 10%;
         right: -450px;
 
-
-
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -21,12 +19,14 @@
         transition: right 0.3s ease;
         z-index: 999;
 
-        .test {
+        .sidebarScroll {
             height: 500px;
             overflow-y: auto;
             scroll-behavior: auto;
 
             .basketItem {
+                width: 20vw;
+
                 img {
                     height: 100px;
                     width: 100px;

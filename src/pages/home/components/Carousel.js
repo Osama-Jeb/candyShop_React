@@ -6,7 +6,7 @@ import candy from "../../../assets/images/candy/candy1.jpg";
 import { NavLink } from "react-router-dom";
 
 
-export const Carousel = () => {
+export const Carousel = (props) => {
     let myPgs = [
         {
             name: "drinks",
@@ -24,7 +24,6 @@ export const Carousel = () => {
             name: "candy",
             src: candy,
         },
-
     ]
     return (
         <>
@@ -32,24 +31,39 @@ export const Carousel = () => {
                 <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner">
                         {
-                            myPgs.map((element, index) =>
-                                <div className={`carousel-item ${index === 0 ? "active" : ""}`} data-bs-interval={2000}>
-                                    <NavLink to={`/products/${element.name}`}>
-                                        <div className="imgHolder d-flex justify-content-center">
-                                        <img src={element.src} alt="..." />
+                            !props.children ?
+                                <>
+                                    {
+                                        myPgs.map((element, index) =>
+                                            <div className={`carousel-item ${index === 0 ? "active" : ""}`} data-bs-interval={2000}>
+                                                <NavLink to={`/products/${element.name}`}>
+                                                    <div className="imgHolder d-flex justify-content-center">
+                                                        <img src={element.src} alt="..." />
+                                                    </div>
+                                                </NavLink>
+                                            </div>
+                                        )
+                                    }
+                                </>
+                                :
+                                props.children.map((element, index) =>
+                                    <>
+                                        <div className={`carousel-item ${index === 0 ? "active" : ""}`} data-bs-interval={2000}>
+                                            <NavLink to={`/products/${element.type}/${element.name}`}>
+                                                <div className="imgHolder d-flex justify-content-center">
+                                                    <img src={element.src} alt="..." />
+                                                </div>
+                                            </NavLink>
                                         </div>
-                                    </NavLink>
-                                </div>
-                            )
+                                    </>
+                                )
                         }
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true" />
-                        <span className="visually-hidden">Previous</span>
+                        <h1 className="choco">{"<=="}</h1>
                     </button>
                     <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true" />
-                        <span className="visually-hidden">Next</span>
+                        <h1 className="choco">{"==>"}</h1>
                     </button>
                 </div>
             </div>

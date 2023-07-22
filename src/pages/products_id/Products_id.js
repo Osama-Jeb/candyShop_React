@@ -2,6 +2,7 @@ import { NavLink, useParams } from "react-router-dom";
 import "./_products_id.scss";
 import { useContext } from "react";
 import { Bakset } from "../../App";
+import { Carousel } from "../home/components/Carousel";
 
 export const Product_id = () => {
     const { id } = useParams();
@@ -20,9 +21,9 @@ export const Product_id = () => {
                                 element.name === id ?
                                     <>
                                         <div className="heroHolder">
-                                            <img className="productHero" src={element.hero} alt="" />
+                                            <Carousel>{allInfo[index].items}</Carousel>
                                         </div>
-                                        <div className="myItems">
+                                        <div className="myItems container">
                                             {
                                                 allInfo[index].items.map((el, i) =>
                                                     <>

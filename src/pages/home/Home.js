@@ -22,7 +22,7 @@ export const Home = () => {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis earu obcaecati.</p>
         </div>
 
-        <Carousel />
+        <Carousel></Carousel>
       </div>
     </>
   );

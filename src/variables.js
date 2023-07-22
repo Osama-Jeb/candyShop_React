@@ -50,37 +50,37 @@ class Products {
     }
 }
 
-let drink_1 = new Products("Drink 1", "Drink", 1, 5, 10, drink1);
-let drink_2 = new Products("Drink 2", "Drink", 2, 7, 10, drink2);
-let drink_3 = new Products("Drink 3", "Drink", 3, 2, 10, drink3);
-let drink_4 = new Products("Drink 4", "Drink", 4, 8, 10, drink4);
-let drink_5 = new Products("Drink 5", "Drink", 5, 6, 10, drink5);
-let drink_6 = new Products("Drink 6", "Drink", 6, 4, 10, drink6);
-let drink_7 = new Products("Drink 7", "Drink", 7, 5, 10, drink7);
-let drink_8 = new Products("Drink 8", "Drink", 8, 1, 10, drink8);
+let drink_1 = new Products("Drink 1", "drinks", 1, 5, 10, drink1);
+let drink_2 = new Products("Drink 2", "drinks", 2, 7, 10, drink2);
+let drink_3 = new Products("Drink 3", "drinks", 3, 2, 10, drink3);
+let drink_4 = new Products("Drink 4", "drinks", 4, 8, 10, drink4);
+let drink_5 = new Products("Drink 5", "drinks", 5, 6, 10, drink5);
+let drink_6 = new Products("Drink 6", "drinks", 6, 4, 10, drink6);
+let drink_7 = new Products("Drink 7", "drinks", 7, 5, 10, drink7);
+let drink_8 = new Products("Drink 8", "drinks", 8, 1, 10, drink8);
 
 let drinkList = [drink_1, drink_2, drink_3, drink_4, drink_5, drink_6, drink_7, drink_8]
 
-let chip_1 = new Products("chip 1", "chip", 1, 5, 10, chip1);
-let chip_2 = new Products("chip 2", "chip", 2, 7, 10, chip2);
-let chip_3 = new Products("chip 3", "chip", 3, 2, 10, chip3);
-let chip_4 = new Products("chip 4", "chip", 4, 8, 10, chip4);
-let chip_5 = new Products("chip 5", "chip", 5, 6, 10, chip5);
-let chip_6 = new Products("chip 6", "chip", 6, 4, 10, chip6);
-let chip_7 = new Products("chip 7", "chip", 7, 5, 10, chip7);
-let chip_8 = new Products("chip 8", "chip", 8, 1, 10, chip8);
+let chip_1 = new Products("chip 1", "chips", 1, 5, 10, chip1);
+let chip_2 = new Products("chip 2", "chips", 2, 7, 10, chip2);
+let chip_3 = new Products("chip 3", "chips", 3, 2, 10, chip3);
+let chip_4 = new Products("chip 4", "chips", 4, 8, 10, chip4);
+let chip_5 = new Products("chip 5", "chips", 5, 6, 10, chip5);
+let chip_6 = new Products("chip 6", "chips", 6, 4, 10, chip6);
+let chip_7 = new Products("chip 7", "chips", 7, 5, 10, chip7);
+let chip_8 = new Products("chip 8", "chips", 8, 1, 10, chip8);
 
 let chipList = [chip_1, chip_2, chip_3, chip_4, chip_5, chip_6, chip_7, chip_8]
 
 
-let bar_1 = new Products("bar 1", "bar", 1, 5, 10, bar1);
-let bar_2 = new Products("bar 2", "bar", 2, 7, 10, bar2);
-let bar_3 = new Products("bar 3", "bar", 3, 2, 10, bar3);
-let bar_4 = new Products("bar 4", "bar", 4, 8, 10, bar4);
-let bar_5 = new Products("bar 5", "bar", 5, 6, 10, bar5);
-let bar_6 = new Products("bar 6", "bar", 6, 4, 10, bar6);
-let bar_7 = new Products("bar 7", "bar", 7, 5, 10, bar7);
-let bar_8 = new Products("bar 8", "bar", 8, 1, 10, bar8);
+let bar_1 = new Products("bar 1", "bars", 1, 5, 10, bar1);
+let bar_2 = new Products("bar 2", "bars", 2, 7, 10, bar2);
+let bar_3 = new Products("bar 3", "bars", 3, 2, 10, bar3);
+let bar_4 = new Products("bar 4", "bars", 4, 8, 10, bar4);
+let bar_5 = new Products("bar 5", "bars", 5, 6, 10, bar5);
+let bar_6 = new Products("bar 6", "bars", 6, 4, 10, bar6);
+let bar_7 = new Products("bar 7", "bars", 7, 5, 10, bar7);
+let bar_8 = new Products("bar 8", "bars", 8, 1, 10, bar8);
 
 let barList = [bar_1, bar_2, bar_3, bar_4, bar_5, bar_6, bar_7, bar_8]
 

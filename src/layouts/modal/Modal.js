@@ -115,7 +115,7 @@ export const Modal = () => {
                                                     <input type="password" required placeholder="Confirm Password" value={rePass} onChange={userInfo} />
                                                 </form>
 
-                                                <button type="button" className="btn btn-purple rounded-pill" onClick={createUser}>Sign UP</button>
+                                                <button type="button" className="btn btn-purple text-light rounded-pill" onClick={createUser}>Sign UP</button>
 
                                             </div>
                                         </div>
@@ -131,7 +131,7 @@ export const Modal = () => {
                                                     }} />
                                                 </form>
 
-                                                <button type="button" className="btn btn-primary" onClick={signIn}>Sign IN</button>
+                                                <button type="button" className="btn btn-purple text-light rounded-pill" onClick={signIn}>Sign IN</button>
 
                                             </div>
                                         </div>

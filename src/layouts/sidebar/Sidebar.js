@@ -7,7 +7,7 @@ import { Bakset } from "../../App";
 
 export const Sidebar = () => {
     const allValue = useContext(Bakset);
-    const basketInfo = allValue.basketInfo[0]
+    const [basketInfo, setBasketInfo] = allValue.basketInfo
 
     function toggleSidebar() {
         const sidebar = document.querySelector('.sidebar');
@@ -18,13 +18,13 @@ export const Sidebar = () => {
         const uniqueIndex = element.id - 1;
 
         switch (element.type) {
-            case "Drink":
+            case "drinks":
                 action === "add" ? allValue.addItem(0, uniqueIndex) : allValue.removeItem(0, uniqueIndex);
                 break;
-            case "chip":
+            case "chips":
                 action === "add" ? allValue.addItem(1, uniqueIndex) : allValue.removeItem(1, uniqueIndex);
                 break;
-            case "bar":
+            case "bars":
                 action === "add" ? allValue.addItem(2, uniqueIndex) : allValue.removeItem(2, uniqueIndex);
                 break;
             case "candy":
@@ -35,6 +35,9 @@ export const Sidebar = () => {
         }
     };
 
+    const clearBasket = () => {
+        setBasketInfo([])
+    }
 
 
     return (
@@ -44,6 +47,7 @@ export const Sidebar = () => {
                     <FontAwesomeIcon icon={faShoppingCart} />
                 </button>
                 <div className="sidebar">
+                    <button onClick={clearBasket}>CLEAR</button>
                     <div className="sidebarScroll">
                         {
                             basketInfo.length === 0 ?

@@ -12,10 +12,15 @@ export const Products_Id_Unique = () => {
 
     return (
         <>
-            <motion.div className="bg-purple motionHolder"
-                initial={{ y: "100vw", opacity: 0 }}
-                animate={{ y: "0", opacity:1 }}
-                transition={{ type: "tween", delay: 0.25, duration: 0.4, stiffness: 200 }}
+            <motion.div className="motionHolder"
+                initial={{ x: "100vw", opacity: 0 }}
+                animate={{ x: "0", opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.9, ease: "easeInOut" }}
+                exit={{
+                    x: "-100vw",
+                    opacity: 0,
+                    transition: { duration: 0.75, delay: 0.25, ease: "easeInOut" }
+                }}
             >
 
                 <div className="mt-4">
@@ -37,15 +42,15 @@ export const Products_Id_Unique = () => {
                                                                     <img className="uniqueImg" src={el.src} alt="" />
                                                                     <h1>{el.name}</h1>
                                                                     <div className="d-flex align-items-center">
-                                                                    <button onClick={() => {
-                                                                        allValue.removeItem(index, i);
-                                                                    }}>
-                                                                        -1
-                                                                    </button>
-                                                                    <h2>{10-el.stock}</h2>
-                                                                    <button onClick={() => {
-                                                                        allValue.addItem(index, i);
-                                                                    }}>+1</button>
+                                                                        <button onClick={() => {
+                                                                            allValue.removeItem(index, i);
+                                                                        }}>
+                                                                            -1
+                                                                        </button>
+                                                                        <h2>{10 - el.stock}</h2>
+                                                                        <button onClick={() => {
+                                                                            allValue.addItem(index, i);
+                                                                        }}>+1</button>
                                                                     </div>
 
                                                                 </>

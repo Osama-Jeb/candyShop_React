@@ -3,6 +3,8 @@
     background: radial-gradient(circle, rgba(155, 9, 227, 1) 0%, rgba(90, 3, 133, 1) 55%);
     display: flex;
     padding: 150px 0px;
+    height: 100vh;
+    width: calc(99vw - 3px);
     align-items: center;
     justify-content: center;
     font-family: "choco";
@@ -13,19 +15,19 @@
         width: 300px;
         border-top-right-radius: 50%;
         border-bottom-left-radius: 50%;
-        // animation: spin 7s linear infinite;
+        animation: spin 7s linear infinite;
 
         //this looks cool but unsupported in most browsers
         -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
     }
 }
 
-body{
+body {
     color: white;
     background-image: url("../../assets/images/purplePattern.png");
 }
 
-.secNcaro{
+.secNcaro {
     background-color: #9609dc;
 }
 

@@ -8,6 +8,7 @@ import { Bakset } from "../../App";
 export const Sidebar = () => {
     const allValue = useContext(Bakset);
     const [basketInfo, setBasketInfo] = allValue.basketInfo
+    const [totalPrice, setTotalPrice] = allValue.totalPrice
 
     function toggleSidebar() {
         const sidebar = document.querySelector('.sidebar');
@@ -37,6 +38,7 @@ export const Sidebar = () => {
 
     const clearBasket = () => {
         setBasketInfo([])
+        setTotalPrice(0)
     }
 
 
@@ -54,7 +56,9 @@ export const Sidebar = () => {
                         {
                             basketInfo.length === 0 ?
                                 <>
-                                    <h1 className="shop choco text-center">SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP</h1>
+                                    <h1 className="shop choco text-center">SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP 
+                                    SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP 
+                                    SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP SHOP</h1>
                                 </>
                                 :
                                 <>
@@ -65,7 +69,7 @@ export const Sidebar = () => {
                                                     <div className="basketItem d-flex align-items-center justify-content-around m-1">
                                                         <img src={element.src} alt="" />
                                                         <div className="d-flex align-items-center flex-column">
-                                                            <h4 className="text-dark fw-bold">{element.name}</h4>
+                                                            <h4 className="text-light fw-bold">{element.name}</h4>
                                                             <div className="d-flex w-100  gap-1 align-items-center">
                                                                 <button className="btn btn-purple rounded-pill text-light" onClick={() => {
                                                                     SidebarItem(element, "remove");
@@ -85,7 +89,7 @@ export const Sidebar = () => {
                         }
                     </div>
                     <div>
-                        <h1 className="choco">Total: {allValue.totalPrice}$</h1>
+                        <h1 className="choco">Total: {totalPrice}$</h1>
                     </div>
                 </div>
             </div>

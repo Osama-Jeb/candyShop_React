@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./_modal.scss";
+import { Bakset } from "../../App";
 
 export const Modal = () => {
-    const [users, setUsers] = useState([]);
+    const allValue = useContext(Bakset);
+    const [users, setUsers] = allValue.users;
+
+    const [user, setUser] = useState({
+        name: "",
+        userName: "",
+        phone: "",
+        email: "",
+        pass: "",
+        rePass: "",
+    })
 
     const [name, setName] = useState("");
     const [userName, setUserName] = useState("");
@@ -79,7 +90,7 @@ export const Modal = () => {
         <>
             <div className="myModal">
                 <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div className="modal-dialog">
+                    <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h1 className="modal-title fs-5" id="exampleModalLabel">WELCOME</h1>

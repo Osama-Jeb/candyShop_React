@@ -8,9 +8,14 @@ export const Home = () => {
   return (
     <>
       <motion.div
-        initial={{ x: "100vw", opacity:0 }}
-        animate={{ x: 0, opacity:1 }}
-        transition={{ type: "tween", delay: 0.2, duration: 0.4, stiffness: 200 }}
+        initial={{ x: "100vw", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.9, ease : "easeInOut" }}
+        exit={{
+          x: "-100vw",
+          opacity: 0,
+          transition: { duration: 0.75, delay: 0.25, ease : "easeInOut" }
+        }}
       >
         <div className="heroHolder">
           <img className="heroImg" src={hero} alt="" />
@@ -29,11 +34,11 @@ export const Home = () => {
           </div>
 
           <motion.div
-          initial={{opacity:0}}
-          whileInView={{opacity:1}}
-          transition={{delay: 0.2, duration: 1}}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 1, ease : "easeInOut" }}
           >
-          <Carousel></Carousel>
+            <Carousel></Carousel>
           </motion.div>
         </div>
       </motion.div>

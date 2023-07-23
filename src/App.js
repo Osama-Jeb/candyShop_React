@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Error } from "./Error";
 import { Home } from "./pages/home/Home";
 import { Navigation } from "./layouts/Navigation";
@@ -9,6 +9,7 @@ import { Products_Id_Unique } from "./pages/products_id/components/Products_Id_U
 
 // importing all my variables and images from here as an array
 import { productInfo } from "./variables"
+import { AnimatePresence } from "framer-motion";
 
 // creating my context
 export const Bakset = createContext();
@@ -18,6 +19,7 @@ export const App = () => {
   const [allInfo, setAllInfo] = useState(productInfo);
   const [basketInfo, setBasketInfo] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [users, setUsers] = useState([])
 
   // adding an item using what group it belongs to and what it's position is
   const addItem = (groupIndex, uniqueIndex) => {
@@ -84,22 +86,26 @@ export const App = () => {
     addItem: addItem,
     removeItem: removeItem,
     // total price to display on checkout sidebar
-    totalPrice: totalPrice,
+    totalPrice: [totalPrice, setTotalPrice],
+    // my Users
+    users : [users, setUsers],
   }
 
-
+  const location = useLocation();
 
   return (
     <>
       {/* Calling the context provider using my object as a value */}
       <Bakset.Provider value={allValue} >
         <Navigation />
-        <Routes>
+        <AnimatePresence>
+        <Routes location={location} key={location.key}>
           <Route path="*" element={<Error />} />
           <Route path="/" element={<Home />} />
           <Route path="/products/:id" element={<Product_id />} />
           <Route path="/products/:id/:unique" element={<Products_Id_Unique />} />
         </Routes>
+        </AnimatePresence>
         <Modal />
       </Bakset.Provider>
     </>

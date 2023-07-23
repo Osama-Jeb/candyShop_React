@@ -69,8 +69,9 @@ export const App = () => {
   //todo need to check the addItem function later
   const calc = () => {
     let total = 0;
-    for (let index = 0; index < basketInfo.length; index++) {
-      let element = basketInfo[index];
+    let test = [...basketInfo]
+    for (let index = 0; index < test.length; index++) {
+      let element = test[index];
       total += element.price * (10 - element.stock);
     }
     setTotalPrice(total);
@@ -88,9 +89,10 @@ export const App = () => {
     // total price to display on checkout sidebar
     totalPrice: [totalPrice, setTotalPrice],
     // my Users
-    users : [users, setUsers],
+    users: [users, setUsers],
   }
 
+  // Changes value according to current route path
   const location = useLocation();
 
   return (
@@ -98,13 +100,14 @@ export const App = () => {
       {/* Calling the context provider using my object as a value */}
       <Bakset.Provider value={allValue} >
         <Navigation />
+        {/* Detects when Routes change */}
         <AnimatePresence>
-        <Routes location={location} key={location.key}>
-          <Route path="*" element={<Error />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/products/:id" element={<Product_id />} />
-          <Route path="/products/:id/:unique" element={<Products_Id_Unique />} />
-        </Routes>
+          <Routes location={location} key={location.key}>
+            <Route path="*" element={<Error />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/products/:id" element={<Product_id />} />
+            <Route path="/products/:id/:unique" element={<Products_Id_Unique />} />
+          </Routes>
         </AnimatePresence>
         <Modal />
       </Bakset.Provider>

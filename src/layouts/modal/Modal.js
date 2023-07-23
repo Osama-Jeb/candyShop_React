@@ -13,14 +13,15 @@ export const Modal = () => {
         email: "",
         pass: "",
         rePass: "",
+        connected: false,
     })
 
-    const [name, setName] = useState("");
-    const [userName, setUserName] = useState("");
-    const [phone, setPhone] = useState("");
-    const [email, setEmail] = useState("");
-    const [pass, setPass] = useState("");
-    const [rePass, setRePass] = useState("");
+    //// Courtesy of Chat GPT
+    const emptyUserValues = (object) => {
+        for (const key in object) {
+            object[key] = ""; // You can set it to null or any other default value as needed
+        }
+    };
 
     const [signEmail, setSignEmail] = useState("");
     const [signPass, setSignPass] = useState("");
@@ -28,22 +29,34 @@ export const Modal = () => {
     const userInfo = (event) => {
         switch (event.target.placeholder) {
             case "Full Name":
-                setName(event.target.value);
+                setUser(prev => ({
+                    ...prev, name: event.target.value
+                }))
                 break;
             case "Username":
-                setUserName(event.target.value);
+                setUser(prev => ({
+                    ...prev, userName: event.target.value
+                }))
                 break;
             case "Phone Number":
-                setPhone(event.target.value);
+                setUser(prev => ({
+                    ...prev, phone: event.target.value
+                }))
                 break;
             case "Email":
-                setEmail(event.target.value);
+                setUser(prev => ({
+                    ...prev, email: event.target.value
+                }))
                 break;
             case "Password":
-                setPass(event.target.value);
+                setUser(prev => ({
+                    ...prev, pass: event.target.value
+                }))
                 break;
             case "Confirm Password":
-                setRePass(event.target.value);
+                setUser(prev => ({
+                    ...prev, rePass: event.target.value
+                }))
                 break;
             default:
                 break;
@@ -51,40 +64,34 @@ export const Modal = () => {
     }
 
     const createUser = () => {
-        if (name && userName && phone && email.includes("@") && pass === rePass && pass.length >= 4) {
-            let newUser = {
-                name: name,
-                username: userName,
-                number: phone,
-                email: email,
-                password: pass,
-                connected: false,
-            }
+        if (user.name && user.userName && user.phone && user.email.includes("@") && user.pass === user.rePass) {
             let temp = [...users];
+            let newUser = { ...user }
             temp.push(newUser);
-            setName("");
-            setUserName("");
-            setPhone("");
-            setEmail("");
-            setPass("");
-            setRePass("");
+
+            emptyUserValues(user);
+
             setUsers(temp);
+            // So I can Pass to the other tabList
             let tabListBtn = document.querySelectorAll(".navBtn");
             tabListBtn[1].click();
         }
     }
 
     const signIn = () => {
-        for (let index = 0; index < users.length; index++) {
-            let user = users[index];
-            console.log(index, user.email, signEmail, user.password, signPass)
-            if (user.email === signEmail && user.password == signPass) {
+        let tempUsers = [...users]
+        for (let index = 0; index < tempUsers.length; index++) {
+            let element = tempUsers[index];
+            if (element.email === signEmail && element.pass === signPass) {
+                tempUsers[index].connected = true;
                 document.querySelector(".modClose").click();
+                console.log(element)
                 setSignEmail("");
                 setSignPass("");
-            }
 
+            }
         }
+        setUsers(tempUsers)
     }
     return (
         <>
@@ -118,12 +125,12 @@ export const Modal = () => {
 
                                             <div className="d-flex align-items-center flex-column gap-2">
                                                 <form action="" className="d-flex align-items-center flex-column">
-                                                    <input type="text" required placeholder="Full Name" value={name} onChange={userInfo} />
-                                                    <input type="text" required placeholder="Username" value={userName} onChange={userInfo} />
-                                                    <input type="number" required placeholder="Phone Number" value={phone} onChange={userInfo} />
-                                                    <input type="email" required placeholder="Email" value={email} onChange={userInfo} />
-                                                    <input type="password" required placeholder="Password" value={pass} onChange={userInfo} />
-                                                    <input type="password" required placeholder="Confirm Password" value={rePass} onChange={userInfo} />
+                                                    <input type="text" required placeholder="Full Name" value={user.name} onChange={userInfo} />
+                                                    <input type="text" required placeholder="Username" value={user.userName} onChange={userInfo} />
+                                                    <input type="number" required placeholder="Phone Number" value={user.phone} onChange={userInfo} />
+                                                    <input type="email" required placeholder="Email" value={user.email} onChange={userInfo} />
+                                                    <input type="password" required placeholder="Password" value={user.pass} onChange={userInfo} />
+                                                    <input type="password" required placeholder="Confirm Password" value={user.rePass} onChange={userInfo} />
                                                 </form>
 
                                                 <button type="button" className="btn btn-purple text-light rounded-pill" onClick={createUser}>Sign UP</button>
@@ -141,15 +148,11 @@ export const Modal = () => {
                                                         setSignPass(e.target.value);
                                                     }} />
                                                 </form>
-
                                                 <button type="button" className="btn btn-purple text-light rounded-pill" onClick={signIn}>Sign IN</button>
-
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

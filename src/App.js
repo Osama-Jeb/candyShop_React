@@ -3,9 +3,9 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { Error } from "./Error";
 import { Home } from "./pages/home/Home";
 import { Navigation } from "./layouts/Navigation";
-import { Product_id } from "./pages/products_id/Products_id";
+import { ProductId } from "./pages/products_id/ProductsId";
 import { Modal } from "./layouts/modal/Modal";
-import { Products_Id_Unique } from "./pages/products_id/components/Products_Id_Unique";
+import { ProductsIdUnique } from "./pages/products_id/components/ProductsIdUnique";
 
 // importing all my variables and images from here as an array
 import { productInfo } from "./variables"
@@ -101,12 +101,12 @@ export const App = () => {
       <Bakset.Provider value={allValue} >
         <Navigation />
         {/* Detects when Routes change */}
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           <Routes location={location} key={location.key}>
             <Route path="*" element={<Error />} />
             <Route path="/" element={<Home />} />
-            <Route path="/products/:id" element={<Product_id />} />
-            <Route path="/products/:id/:unique" element={<Products_Id_Unique />} />
+            <Route path="/products/:id" element={<ProductId />} />
+            <Route path="/products/:id/:unique" element={<ProductsIdUnique />} />
           </Routes>
         </AnimatePresence>
         <Modal />

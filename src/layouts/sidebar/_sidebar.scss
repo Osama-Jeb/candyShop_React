@@ -2,16 +2,16 @@
     position: relative;
     width: 100%;
     font-family: monospace;
-    
+
     .sidebar {
         position: fixed;
         top: 9%;
         right: -450px;
-        
+
         display: flex;
         flex-direction: column;
         align-items: center;
-        
+
         width: 450px;
         height: fit-content;
         padding-bottom: 10px;
@@ -24,19 +24,44 @@
             height: 500px;
             overflow-y: auto;
             scroll-behavior: auto;
-            .shop{
+
+            .shop {
                 color: #8402b6 !important;
             }
 
             .basketItem {
-                width: 20vw;
+                // width: 20vw;
 
                 img {
                     height: 100px;
                     width: 100px;
                     border-radius: 15px;
                 }
+
+                button {
+                    background-image: linear-gradient(to right, #bf45fc 0%, #9609dc 51%, #bf45fc 100%);
+                    margin: 10px;
+                    padding: 5px;
+                    transition: 0.7s;
+                    background-size: 200% auto;
+                    color: white;
+                    border-radius: 15px;
+                    border: none;
+                    outline: none;
+                    width: 40px;
+                }
+
+                button:hover {
+                    background-position: right center;
+                    /* change the direction of the change here */
+                    color: #111111;
+                }
+
+                button:active {
+                    transform: scale(1.1);
+                }
             }
+
         }
     }
 

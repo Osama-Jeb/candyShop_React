@@ -1,11 +1,11 @@
 import { NavLink, useParams } from "react-router-dom";
-import "./_products_id.scss";
+import "./_productsId.scss";
 import { useContext } from "react";
 import { Bakset } from "../../App";
 import { Carousel } from "../home/components/Carousel";
 import { motion } from "framer-motion";
 
-export const Product_id = () => {
+export const ProductId = () => {
     const { id } = useParams();
 
     const allValue = useContext(Bakset);
@@ -17,11 +17,11 @@ export const Product_id = () => {
             <motion.div
                 initial={{ x: "100vw", opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.25, duration: 0.75, ease : "easeInOut" }}
+                transition={{ delay: 0.25, duration: 1, ease: "easeInOut"}}
                 exit={{
                     x: "-100vw",
                     opacity: 0,
-                    transition: { duration: 0.5, delay: 0.25, ease : "easeInOut"}
+                    transition: { duration: 0.25, delay: 0.25, ease: "easeInOut" }
                 }}
             >
                 {
@@ -38,9 +38,9 @@ export const Product_id = () => {
                                             <h1>Browse our Selection</h1>
                                         </div>
                                         <motion.div className="myItems container"
-                                            initial={{ opacity: 0, y: 200 }}
+                                            initial={{ opacity: 0, y: 100 }}
                                             whileInView={{ opacity: 1, y: 0 }}
-                                            transition={{ delay: 0.2, duration: 0.5, ease : "easeInOut" }}
+                                            transition={{ delay: 0.2, duration: 0.5, ease: "easeInOut" }}
                                         >
                                             {
                                                 allInfo[index].items.map((el, i) =>

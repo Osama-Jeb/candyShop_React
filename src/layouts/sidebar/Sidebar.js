@@ -69,13 +69,13 @@ export const Sidebar = () => {
                                                     <div className="basketItem d-flex align-items-center justify-content-around m-1">
                                                         <img src={element.src} alt="" />
                                                         <div className="d-flex align-items-center flex-column">
-                                                            <h4 className="text-light fw-bold">{element.name}</h4>
+                                                            <h4 className="text-light fw-bold text-uppercase">{element.name}</h4>
                                                             <div className="d-flex w-100  gap-1 align-items-center">
-                                                                <button className="btn btn-purple rounded-pill text-light" onClick={() => {
+                                                                <button className="" onClick={() => {
                                                                     SidebarItem(element, "remove");
                                                                 }}>-</button>
                                                                 <h2 className="text-dark fw-bold">{10 - element.stock}</h2>
-                                                                <button className="btn btn-purple rounded-pill text-light" onClick={() => {
+                                                                <button className="" onClick={() => {
                                                                     SidebarItem(element, "add");
                                                                 }}>+</button>
                                                             </div>

@@ -28,9 +28,9 @@ export const Home = () => {
 
         <div className="secNcaro container">
           <div className="sectionTitle container w-50 p-2 text-center text-light">
-            <h4>Shop Your Favourite Food</h4>
-            <h1 className="pacifico">HAPPY EATING</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis earu obcaecati.</p>
+            <h4 className="pacifico">Shop Your Favourite Food</h4>
+            <h1 className="wonka">HAPPY EATING</h1>
+            <p className="choco">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis earu obcaecati.</p>
           </div>
 
           <motion.div

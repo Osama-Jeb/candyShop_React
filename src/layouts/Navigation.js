@@ -32,7 +32,7 @@ export const Navigation = () => {
                 <div>
                     <div className="d-flex align-items-center gap-1">
                         {
-                            someOne === undefined ?
+                            !someOne ?
                                 <>
                                     <h4 className="m-0">GUEST</h4>
                                     <button type="button" className={`btn btn-purple text-light`} data-bs-toggle="modal" data-bs-target="#exampleModal">

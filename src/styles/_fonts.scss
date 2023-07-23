@@ -4,7 +4,7 @@
 }
 
 .choco{
-    font-family: "choco";
+    font-family: "choco" !important;
 }
 
 @font-face {
@@ -13,5 +13,14 @@
 }
 
 .pacifico{
-    font-family: "pacifico";
+    font-family: "pacifico" !important;
+}
+
+@font-face {
+    font-family: "wonka";
+    src: url("../assets/fonts/WillyWonka.ttf");
+}
+
+.wonka {
+    font-family: "wonka" !important;
 }

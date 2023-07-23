@@ -1,21 +1,21 @@
-.topHolder{
+.topHolder {
     background-color: #5a0385;
-    width: 100%;
-    padding-inline: 20px;
+    // width: 100%;
+    padding-inline: 50px;
 
-    h1{
+    h1 {
         text-transform: uppercase;
         text-align: center;
-        font-family: "choco";
+        font-family: "wonka";
         color: #d786ff;
-        
+
     }
 
     .heroHolder {
         display: flex;
         justify-content: center;
         align-items: center;
-    
+
         .productHero {
             height: 500px;
             width: 400px;
@@ -32,9 +32,9 @@
 
     .item {
         color: white;
-        font-family: "pacifico";
-        background: rgb(150,9,220);
-        background: radial-gradient(circle, rgba(150,9,220,1) 0%, rgba(115,6,169,1) 55%); 
+        font-family: "wonka";
+        background: rgb(150, 9, 220);
+        background: radial-gradient(circle, rgba(150, 9, 220, 1) 0%, rgba(115, 6, 169, 1) 55%);
         box-shadow: 0px 0px 10px #8000c083;
         display: flex;
         flex-direction: column;
@@ -55,12 +55,15 @@
             background-image: linear-gradient(to right, #bf45fc 0%, #9609dc 51%, #bf45fc 100%);
             margin: 10px;
             padding: 5px;
-            transition:  0.7s;
+            transition: 0.7s;
             background-size: 200% auto;
             color: white;
             border-radius: 15px;
             border: none;
             outline: none;
+            box-shadow: 0px 0px 5px #b83bf7;
+            font-weight: bolder;
+
         }
 
         button:hover {
@@ -68,7 +71,8 @@
             /* change the direction of the change here */
             color: #111111;
         }
-        button:active{
+
+        button:active {
             transform: scale(1.1);
         }
 

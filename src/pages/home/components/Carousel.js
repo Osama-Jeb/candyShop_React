@@ -37,8 +37,9 @@ export const Carousel = (props) => {
                                         myPgs.map((element, index) =>
                                             <div className={`carousel-item ${index === 0 ? "active" : ""}`} data-bs-interval={2000}>
                                                 <NavLink to={`/products/${element.name}`}>
-                                                    <div className="imgHolder d-flex justify-content-center">
+                                                    <div className="imgHolder d-flex justify-content-center flex-column align-items-center">
                                                         <img src={element.src} alt="..." />
+                                                        <h1>{element.name}</h1>
                                                     </div>
                                                 </NavLink>
                                             </div>

@@ -45,7 +45,11 @@ export const ProductId = () => {
                                             <h1>Browse our Selection</h1>
                                         </div>
 
-                                        <div className="searchBar d-flex gap-1 align-items-center justify-content-center p-2 container">
+                                        <motion.div className="searchBar d-flex gap-1 align-items-center justify-content-center p-2 container"
+                                            initial={{ opacity: 0, y: 100 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: 0.2, duration: 0.5, ease: "easeInOut" }}
+                                        >
                                             <input type="text" onChange={(event) => {
                                                 search(event, index)
                                             }} />
@@ -54,7 +58,7 @@ export const ProductId = () => {
                                             }}>
                                                 Search
                                             </button>
-                                        </div>
+                                        </motion.div>
 
                                         <motion.div className="myItems container"
                                             initial={{ opacity: 0, y: 100 }}

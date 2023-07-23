@@ -64,14 +64,35 @@ export const App = () => {
     calc();
   };
 
+  const SidebarItem = (element, action) => {
+    const uniqueIndex = element.id - 1;
+
+    switch (element.type) {
+      case "drinks":
+        action === "add" ? allValue.addItem(0, uniqueIndex) : allValue.removeItem(0, uniqueIndex);
+        break;
+      case "chips":
+        action === "add" ? allValue.addItem(1, uniqueIndex) : allValue.removeItem(1, uniqueIndex);
+        break;
+      case "bars":
+        action === "add" ? allValue.addItem(2, uniqueIndex) : allValue.removeItem(2, uniqueIndex);
+        break;
+      case "candy":
+        action === "add" ? allValue.addItem(3, uniqueIndex) : allValue.removeItem(3, uniqueIndex);
+        break;
+      default:
+        break;
+    }
+  };
+
   // to calculate the total
-  //todo something's still not right when adding the first element.
-  //todo need to check the addItem function later
+  //todo issue when adding the first element.
+  //todo check the addItem or calc functions later
   const calc = () => {
     let total = 0;
-    let test = [...basketInfo]
-    for (let index = 0; index < test.length; index++) {
-      let element = test[index];
+    let temp = [...basketInfo]
+    for (let index = 0; index < temp.length; index++) {
+      let element = temp[index];
       total += element.price * (10 - element.stock);
     }
     setTotalPrice(total);
@@ -86,6 +107,7 @@ export const App = () => {
     // functions to add and remove item
     addItem: addItem,
     removeItem: removeItem,
+    SidebarItem: SidebarItem,
     // total price to display on checkout sidebar
     totalPrice: [totalPrice, setTotalPrice],
     // my Users

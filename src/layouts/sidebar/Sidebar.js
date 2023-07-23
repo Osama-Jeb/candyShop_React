@@ -9,33 +9,12 @@ export const Sidebar = () => {
     const allValue = useContext(Bakset);
     const [basketInfo, setBasketInfo] = allValue.basketInfo;
     const [totalPrice, setTotalPrice] = allValue.totalPrice;
-    const [user, setUsers] = allValue.users;
+    const user = allValue.users[0];
 
     function toggleSidebar() {
         const sidebar = document.querySelector('.sidebar');
         sidebar.classList.toggle('active');
     }
-
-    const SidebarItem = (element, action) => {
-        const uniqueIndex = element.id - 1;
-
-        switch (element.type) {
-            case "drinks":
-                action === "add" ? allValue.addItem(0, uniqueIndex) : allValue.removeItem(0, uniqueIndex);
-                break;
-            case "chips":
-                action === "add" ? allValue.addItem(1, uniqueIndex) : allValue.removeItem(1, uniqueIndex);
-                break;
-            case "bars":
-                action === "add" ? allValue.addItem(2, uniqueIndex) : allValue.removeItem(2, uniqueIndex);
-                break;
-            case "candy":
-                action === "add" ? allValue.addItem(3, uniqueIndex) : allValue.removeItem(3, uniqueIndex);
-                break;
-            default:
-                break;
-        }
-    };
 
     const clearBasket = () => {
         let tempBask = [...basketInfo];
@@ -90,11 +69,11 @@ export const Sidebar = () => {
                                                             <h4 className="text-light fw-bold text-uppercase">{element.name}</h4>
                                                             <div className="d-flex w-100  gap-1 align-items-center">
                                                                 <button className="" onClick={() => {
-                                                                    SidebarItem(element, "remove");
+                                                                    allValue.SidebarItem(element, "remove");
                                                                 }}>-</button>
                                                                 <h2 className="text-dark fw-bold">{10 - element.stock}</h2>
                                                                 <button className="" onClick={() => {
-                                                                    SidebarItem(element, "add");
+                                                                    allValue.SidebarItem(element, "add");
                                                                 }}>+</button>
                                                             </div>
                                                         </div>

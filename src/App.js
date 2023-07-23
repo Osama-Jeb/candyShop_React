@@ -6,10 +6,10 @@ import { Navigation } from "./layouts/Navigation";
 import { ProductId } from "./pages/products_id/ProductsId";
 import { Modal } from "./layouts/modal/Modal";
 import { ProductsIdUnique } from "./pages/products_id/components/ProductsIdUnique";
+import { AnimatePresence } from "framer-motion";
 
 // importing all my variables and images from here as an array
 import { productInfo } from "./variables"
-import { AnimatePresence } from "framer-motion";
 
 // creating my context
 export const Bakset = createContext();

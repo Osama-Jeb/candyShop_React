@@ -7,8 +7,9 @@ import { Bakset } from "../../App";
 
 export const Sidebar = () => {
     const allValue = useContext(Bakset);
-    const [basketInfo, setBasketInfo] = allValue.basketInfo
-    const [totalPrice, setTotalPrice] = allValue.totalPrice
+    const [basketInfo, setBasketInfo] = allValue.basketInfo;
+    const [totalPrice, setTotalPrice] = allValue.totalPrice;
+    const [user, setUsers] = allValue.users;
 
     function toggleSidebar() {
         const sidebar = document.querySelector('.sidebar');
@@ -37,10 +38,27 @@ export const Sidebar = () => {
     };
 
     const clearBasket = () => {
+        let tempBask = [...basketInfo];
+        for (let index = 0; index < tempBask.length; index++) {
+            tempBask[index].stock = 10;
+        }
         setBasketInfo([])
         setTotalPrice(0)
     }
 
+    const checkOut = () => {
+        let someOne = user.find(element => element.connected === true);
+        console.log(someOne);
+        if (someOne === undefined) {
+            alert("Please Sign in before checking out your groceries")
+        } else {
+            setBasketInfo([])
+            setTotalPrice(0)
+            setTimeout(() => {
+                alert("Thanks for buy from our store")
+            }, 1000);
+        }
+    }
 
     return (
         <>
@@ -88,8 +106,11 @@ export const Sidebar = () => {
                                 </>
                         }
                     </div>
-                    <div>
+                    <div className="d-flex align-items-center gap-2">
                         <h1 className="choco">Total: {totalPrice}$</h1>
+                        <button className="btn btn-purple text-light fs-4 fw-bolder rounded-pill ps-1 pe-1"
+                        onClick={checkOut}
+                        >CHECKOUT</button>
                     </div>
                 </div>
             </div>

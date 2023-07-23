@@ -10,7 +10,6 @@ export const Navigation = () => {
     const [users, setUsers] = allValue.users
 
     let someOne = users.find(element => element.connected === true);
-    console.log(someOne);
 
     const disconnect = () => {
         let tempUsers = [...users];
@@ -20,7 +19,7 @@ export const Navigation = () => {
     }
     return (
         <>
-            <div className="navBar">
+            <div className="navBar ">
                 <NavLink to={"/"}>Home</NavLink>
                 {
                     myPages.map((element, index) =>

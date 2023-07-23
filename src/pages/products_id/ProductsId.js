@@ -45,7 +45,9 @@ export const ProductId = () => {
                                             {
                                                 allInfo[index].items.map((el, i) =>
                                                     <>
-                                                        <div className="item">
+                                                        <div className="item"
+                                                        
+                                                        >
                                                             <NavLink to={`/products/${id}/${el.name}`}>
                                                                 <img src={el.src} alt="" />
                                                             </NavLink>

@@ -38,7 +38,7 @@ export const ProductId = () => {
                                 element.name === id ?
                                     <>
                                         <div className="topHolder d-flex align-items-center justify-content-center gap-2 ">
-                                            <h1>Enjour our {id}</h1>
+                                            <h1>Enjoy our {id}</h1>
                                             <div className="heroHolder">
                                                 <Carousel>{allInfo[index].items}</Carousel>
                                             </div>

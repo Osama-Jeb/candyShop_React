@@ -45,7 +45,7 @@ export const Home = () => {
         <div className="secNcaro container">
           <div className="sectionTitle container w-50 p-2 text-center text-light">
             <h4 className="pacifico">Shop Your Favourite Food</h4>
-            <h1 className="wonka">HAPPY EATING</h1>
+            <h1 className="choco">HAPPY EATING</h1>
             <p className="choco">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis earu obcaecati.</p>
           </div>
 

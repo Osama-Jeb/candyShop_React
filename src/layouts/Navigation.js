@@ -20,11 +20,11 @@ export const Navigation = () => {
     return (
         <>
             <div className="navBar ">
-                <NavLink to={"/"}>Home</NavLink>
+                <NavLink to={"/candyShop_React/"}>Home</NavLink>
                 {
                     myPages.map((element, index) =>
                         <>
-                            <NavLink to={`/products/${element}`}>{element}</NavLink>
+                            <NavLink to={`/candyShop_React/products/${element}`}>{element}</NavLink>
                         </>
                     )
                 }

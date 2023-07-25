@@ -50,7 +50,7 @@ export const Carousel = (props) => {
                                 props.children.map((element, index) =>
                                     <>
                                         <div className={`carousel-item ${index === 0 ? "active" : ""}`} data-bs-interval={2000}>
-                                            <NavLink to={`/products/${element.type}/${element.name}`}>
+                                            <NavLink to={`/candyShop_React/products/${element.type}/${element.name}`}>
                                                 <div className="imgHolder d-flex justify-content-center">
                                                     <img src={element.src} alt="..." />
                                                 </div>

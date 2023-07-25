@@ -72,7 +72,7 @@ export const ProductId = () => {
                                                             allInfo[index].items.map((el, i) =>
                                                                 <>
                                                                     <div className="item">
-                                                                        <NavLink to={`/products/${id}/${el.name}`}>
+                                                                        <NavLink to={`/candyShop_React/products/${id}/${el.name}`}>
                                                                             <img src={el.src} alt="" />
                                                                         </NavLink>
                                                                         <h2 className="mt-1">{el.name} : {el.price}$</h2>
@@ -96,7 +96,7 @@ export const ProductId = () => {
                                                             searched.map((e, ind) =>
                                                                 <>
                                                                     <div className="item">
-                                                                        <NavLink to={`/products/${id}/${e.name}`}>
+                                                                        <NavLink to={`/candyShop_React/products/${id}/${e.name}`}>
                                                                             <img src={e.src} alt="" />
                                                                         </NavLink>
                                                                         <h2 className="mt-1">{e.name} : {e.price}$</h2>

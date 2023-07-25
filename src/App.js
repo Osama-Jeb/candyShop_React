@@ -125,10 +125,10 @@ export const App = () => {
         {/* Detects when Routes change */}
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.key}>
-            <Route path="*" element={<Error />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/products/:id" element={<ProductId />} />
-            <Route path="/products/:id/:unique" element={<ProductsIdUnique />} />
+            <Route path="/candyShop_React/*" element={<Error />} />
+            <Route path="/candyShop_React/" element={<Home />} />
+            <Route path="/candyShop_React/products/:id" element={<ProductId />} />
+            <Route path="/candyShop_React/products/:id/:unique" element={<ProductsIdUnique />} />
           </Routes>
         </AnimatePresence>
         <Modal />
